@@ -26,7 +26,6 @@ def build_heap(data):
     for i in range(last_non_leaf, -1, -1):
         swap_nodes(data, i)
 
-    print(data)
     return swaps
 
 
@@ -43,7 +42,7 @@ def main():
         if 'a' in filename:
             raise Exception('Filename cannot contain character "a"')
 
-        with open('tests/{filename}') as file:
+        with open(f'tests/{filename}') as file:
             n = int(file.readline())
             data = list(map(int, file.readline().split(' ')))
 
