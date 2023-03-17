@@ -4,18 +4,18 @@ def swap_nodes(data, i):
     n = len(data)
     left_child, right_child = 2 * i + 1, 2 * i + 2
     
-    largest_value = i
+    min_value = i
 
     if left_child < n and data[left_child] < data[largest_value]:
-        largest_value = left_child
+        min_value = left_child
 
     if right_child < n and data[right_child] < data[largest_value]:
-        largest_value = right_child
+        min_value = right_child
 
-    if largest_value != i:
-        data[i], data[largest_value] = data[largest_value], data[i]
-        swaps.append((i, largest_value))
-        swap_nodes(data, largest_value)
+    if min_value != i:
+        data[i], data[min_value] = data[min_value], data[i]
+        swaps.append((i, min_value))
+        swap_nodes(data, min_value)
 
 
 def build_heap(data):
