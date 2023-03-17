@@ -6,10 +6,10 @@ def swap_nodes(data, i):
     
     min_value = i
 
-    if left_child < n and data[left_child] < data[largest_value]:
+    if left_child < n and data[left_child] < data[min_value]:
         min_value = left_child
 
-    if right_child < n and data[right_child] < data[largest_value]:
+    if right_child < n and data[right_child] < data[min_value]:
         min_value = right_child
 
     if min_value != i:
